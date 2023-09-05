@@ -1,4 +1,10 @@
-import {Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Quote} from "lucide-react";
+import {
+    Heading1,
+    Heading2,
+    Heading3,
+    Pilcrow,
+    Quote,
+} from "lucide-react";
 
 interface CommandProps {
     editor: any;
@@ -16,7 +22,13 @@ const getHeadingCommand = (level: number) => {
     };
 }
 
-const SuggestionItem = ({query}: { query: string }) => [
+const Suggestions = ({query}: { query: string }) => [
+    {
+        title: "Paragraph",
+        description: "Paragraph",
+        icon: <Pilcrow/>,
+        command: getHeadingCommand(1),
+    },
     {
         title: "Heading 1",
         description: "Heading 1",
@@ -36,24 +48,6 @@ const SuggestionItem = ({query}: { query: string }) => [
         command: getHeadingCommand(3),
     },
     {
-        title: "Heading 4",
-        description: "Heading 1",
-        icon: <Heading4/>,
-        command: getHeadingCommand(4),
-    },
-    {
-        title: "Heading 5",
-        description: "Heading 1",
-        icon: <Heading5/>,
-        command: getHeadingCommand(5),
-    },
-    {
-        title: "Heading 6",
-        description: "Heading 1",
-        icon: <Heading6/>,
-        command: getHeadingCommand(6),
-    },
-    {
         title: "Blockquote",
         description: "Heading 1",
         icon: <Quote/>,
@@ -69,4 +63,4 @@ const SuggestionItem = ({query}: { query: string }) => [
     }
 ]
 
-export default SuggestionItem
+export default Suggestions
