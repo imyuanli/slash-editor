@@ -1,9 +1,10 @@
 import {
+    Code,
     Heading1,
     Heading2,
     Heading3, List, ListOrdered,
     Pilcrow,
-    Quote,
+    Quote, TerminalSquare,
 } from "lucide-react";
 
 interface CommandProps {
@@ -63,14 +64,26 @@ const Suggestions = ({query}: { query: string }) => [
     {
         title: 'Bullet List',
         description: 'Create a simple bullet list.',
-        icon: <List />,
+        icon: <List/>,
         command: (props: CommandProps) => getCommand(props).toggleBulletList().run()
     },
     {
         title: 'Ordered List',
         description: 'Create a list with numbering.',
-        icon: <ListOrdered />,
+        icon: <ListOrdered/>,
         command: (props: CommandProps) => getCommand(props).toggleOrderedList().run()
+    },
+    {
+        title: "Code",
+        description: "Capture a line code",
+        icon: <Code/>,
+        command: (props: CommandProps) => getCommand(props).toggleCode().run(),
+    },
+    {
+        title: "CodeBlock",
+        description: "Capture a code snippet.",
+        icon: <TerminalSquare/>,
+        command: (props: CommandProps) => getCommand(props).toggleCodeBlock().run(),
     },
 ]
 
