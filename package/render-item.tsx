@@ -57,7 +57,14 @@ const CommendItem: any = ({
     return (
         <DropdownMenu defaultOpen={true}>
             <DropdownMenuTrigger/>
-            <DropdownMenuContent side={'right'} sideOffset={10} align={'start'} alignOffset={-30}>
+            <DropdownMenuContent
+                loop={true}
+                side={'right'}
+                sideOffset={10}
+                align={'start'}
+                alignOffset={-30}
+                className={'max-h-96 overflow-auto'}
+            >
                 {
                     items.length ?
                         items.map((item, index) => (
