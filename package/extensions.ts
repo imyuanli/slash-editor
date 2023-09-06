@@ -4,6 +4,7 @@ import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
 import Underline from '@tiptap/extension-underline'
 import Link from '@tiptap/extension-link'
+import {Typography} from "@tiptap/extension-typography";
 
 export const defaultExtensions = [
     SlashCommand,
@@ -15,5 +16,6 @@ export const defaultExtensions = [
     Underline,
     Link.configure({
         autolink: false,
-    })
+    }),
+    Typography,
 ]
