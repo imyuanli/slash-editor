@@ -2,6 +2,7 @@ import React from "react";
 import {Toggle} from "@/components/ui/toggle";
 import {BubbleMenu} from "@tiptap/react";
 import {markMenu} from "@/package/menus";
+import LinkPopover from "@/package/bubble/link-popover";
 
 const Bubble = ({editor}: any) => {
     return (
@@ -22,6 +23,7 @@ const Bubble = ({editor}: any) => {
                           </Toggle>
                       )
                   })}
+                <LinkPopover editor={editor} />
               </div>
             </BubbleMenu>}
         </>

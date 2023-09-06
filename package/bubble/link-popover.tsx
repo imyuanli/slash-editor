@@ -6,25 +6,24 @@ import React from "react";
 import {useSetState} from "ahooks";
 import {Toggle} from "@/components/ui/toggle";
 
-const LinkPopover = ({editor, getEditor, isActive}: any) => {
+const LinkPopover = ({editor}: any) => {
+    const isActive = () => editor?.isActive('link')
     const [state, setState] = useSetState({
-        href: editor.getAttributes('link').href,
+        href: editor?.getAttributes('link').href,
         open: false
     })
-
     const {open, href} = state
-    const handleOpen = () => {
+    const handleChangeOpen = () => {
         setState({
             open: !open
         })
     }
-
     return (
-        <Popover open={open} modal={open} onOpenChange={handleOpen}>
+        <Popover open={open} modal={true} onOpenChange={handleChangeOpen}>
             <PopoverTrigger>
                 <Toggle
                     size="sm"
-                    pressed={isActive('link')}
+                    pressed={isActive()}
                 >
                     <Link/>
                 </Toggle>
@@ -34,13 +33,6 @@ const LinkPopover = ({editor, getEditor, isActive}: any) => {
                     <h4 className="font-medium leading-none">Link</h4>
                     <div className="flex w-full justify-center items-center space-x-2">
                         <Input
-                            value={href}
-                            required={true}
-                            onInput={(e: any) => {
-                                setState({
-                                    href: e.target.value
-                                })
-                            }}
                             placeholder={'https://www.baidu.com'}
                         />
                         <div className={'flex space-x-2'}>
@@ -48,18 +40,18 @@ const LinkPopover = ({editor, getEditor, isActive}: any) => {
                                 size={'icon'}
                                 variant="outline"
                                 onClick={() => {
-                                    getEditor().extendMarkRange('link').setLink({href}).run()
-                                    handleOpen()
+                                    editor?.chain().focus().extendMarkRange('link').setLink({href}).run()
+                                    handleChangeOpen()
                                 }}
                             >
-                                <Check />
+                                <Check/>
                             </Button>
-                            {isActive('link') && <Button
+                            {isActive() && <Button
                               size={'icon'}
                               variant="destructive"
                               onClick={() => {
-                                  getEditor().unsetLink().run()
-                                  handleOpen()
+                                  editor?.chain().focus().unsetLink().run()
+                                  handleChangeOpen()
                               }}
                             >
                               <Link2Off/>
