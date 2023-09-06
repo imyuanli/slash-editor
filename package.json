@@ -1,6 +1,22 @@
 {
-  "name": "slash",
+  "name": "slash-editor",
   "version": "0.1.0",
+  "description": "Enter a '/' to start writing your rich text!",
+  "author": "yuanli <2865437316@qq.com>",
+  "keywords": [
+    "next",
+    "react",
+    "tailwindcss",
+    "shadcn-ui",
+    "lucide-react",
+    "tiptap",
+    "tiptap-react",
+    "rich-text",
+    "rich-text-editor",
+    "slash-editor",
+    "markdown",
+    "editor"
+  ],
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -41,5 +57,6 @@
     "tailwindcss-animate": "^1.0.7",
     "tippy": "^0.0.0",
     "typescript": "5.2.2"
-  }
+  },
+  "license": "MIT"
 }
