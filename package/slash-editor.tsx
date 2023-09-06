@@ -27,7 +27,7 @@ const SlashEditor: React.FunctionComponent<SlashEditorProps> = forwardRef((
             },
         },
         autofocus: 'end',
-        content: `测试测试测试`,
+        content: ``,
     });
 
     useImperativeHandle(
