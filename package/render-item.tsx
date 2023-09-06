@@ -67,14 +67,14 @@ const CommendItem: any = ({
             >
                 {
                     items.length ?
-                        items.map((item, index) => (
+                        items.map((item: any, index) => (
                             <DropdownMenuItem
                                 key={index}
                                 onClick={() => selectItem(index)}
                                 className={'flex items-center space-x-2'}
                             >
                                 <div className={'border border-solid rounded-md p-1'}>
-                                    {item.icon}
+                                    {React.createElement(item.icon)}
                                 </div>
                                 <div className={'flex flex-col space-y-2'}>
                                     <div className={'font-semibold'}>{item.title}</div>
@@ -87,7 +87,6 @@ const CommendItem: any = ({
                 }
             </DropdownMenuContent>
         </DropdownMenu>
-
     )
 }
 
