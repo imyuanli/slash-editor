@@ -1,8 +1,9 @@
 'use client'
 
-import {BubbleMenu, EditorContent, useEditor} from '@tiptap/react';
+import {EditorContent, useEditor} from '@tiptap/react';
 import {defaultExtensions} from "@/package/extensions";
 import {forwardRef, useImperativeHandle} from "react";
+import Bubble from "@/package/bubble";
 
 interface SlashEditorProps {
     className?: string;
@@ -26,7 +27,7 @@ const SlashEditor: React.FunctionComponent<SlashEditorProps> = forwardRef((
             },
         },
         autofocus: 'end',
-        content: ``,
+        content: `测试测试测试`,
     });
 
     useImperativeHandle(
@@ -43,26 +44,7 @@ const SlashEditor: React.FunctionComponent<SlashEditorProps> = forwardRef((
             onClick={getFocus}
             className={className}
         >
-            {editor && <BubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>
-              <button
-                onClick={() => editor.chain().focus().toggleBold().run()}
-                className={editor.isActive('bold') ? 'is-active' : ''}
-              >
-                bold
-              </button>
-              <button
-                onClick={() => editor.chain().focus().toggleItalic().run()}
-                className={editor.isActive('italic') ? 'is-active' : ''}
-              >
-                italic
-              </button>
-              <button
-                onClick={() => editor.chain().focus().toggleStrike().run()}
-                className={editor.isActive('strike') ? 'is-active' : ''}
-              >
-                strike
-              </button>
-            </BubbleMenu>}
+            <Bubble editor={editor}/>
             <EditorContent editor={editor}/>
         </div>
     );
