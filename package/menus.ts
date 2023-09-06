@@ -13,7 +13,7 @@ import {
 
 interface CommandProps {
     editor: any;
-    range: any;
+    range?: any;
 }
 
 const handleCommand = ({editor, range}: any) => {
