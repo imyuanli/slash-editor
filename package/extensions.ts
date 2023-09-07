@@ -7,6 +7,7 @@ import Link from '@tiptap/extension-link'
 import {Typography} from "@tiptap/extension-typography";
 import {Color} from "@tiptap/extension-color";
 import {TextStyle} from "@tiptap/extension-text-style";
+import {Highlight} from "@tiptap/extension-highlight";
 
 export const defaultExtensions = [
     SlashCommand,
@@ -19,5 +20,8 @@ export const defaultExtensions = [
     Link,
     Typography,
     Color,
-    TextStyle
+    TextStyle,
+    Highlight.configure({
+        multicolor: true,
+    }),
 ]

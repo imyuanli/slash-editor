@@ -4,6 +4,7 @@ import {BubbleMenu} from "@tiptap/react";
 import {markMenu} from "@/package/menus";
 import LinkPopover from "@/package/bubble/link-popover";
 import ColorSetting from "@/package/bubble/color-setting";
+import HeadlineSetting from "@/package/bubble/highlight-settig";
 
 const Bubble = ({editor}: any) => {
     return (
@@ -26,6 +27,7 @@ const Bubble = ({editor}: any) => {
                   })}
                 <LinkPopover editor={editor}/>
                 <ColorSetting editor={editor}/>
+                <HeadlineSetting editor={editor}/>
               </div>
             </BubbleMenu>}
         </>
