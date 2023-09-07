@@ -13,7 +13,7 @@ interface SlashEditorProps {
 }
 
 const defaultClass =
-    'relative min-h-[580px] w-full max-w-screen-lg border-stone-200 bg-white rounded-lg border shadow-lg p-8'
+    'relative min-h-[580px] w-full max-w-screen-lg rounded-lg border shadow-lg p-8'
 
 
 const SlashEditor: React.FunctionComponent<SlashEditorProps> = forwardRef(({
