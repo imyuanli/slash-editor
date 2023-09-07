@@ -4,6 +4,7 @@ import {EditorContent, useEditor} from '@tiptap/react';
 import {defaultExtensions} from "@/package/extensions";
 import {forwardRef, useImperativeHandle} from "react";
 import Bubble from "@/package/bubble";
+import defaultContent from "@/package/default-content";
 
 interface SlashEditorProps {
     className?: string;
@@ -11,23 +12,26 @@ interface SlashEditorProps {
     ref?: any;
 }
 
-const SlashEditor: React.FunctionComponent<SlashEditorProps> = forwardRef((
-    {
-        className = 'relative min-h-[480px] w-full max-w-screen-lg border-stone-200 sm:mb-[calc(20vh)] sm:rounded-lg sm:border sm:shadow-lg',
-        extensions,
-    },
-    ref
+const defaultClass =
+    'relative min-h-[580px] w-full max-w-screen-lg border-stone-200 bg-white rounded-lg border shadow-lg p-8'
+
+
+const SlashEditor: React.FunctionComponent<SlashEditorProps> = forwardRef(({
+                                                                               className = defaultClass,
+                                                                               extensions,
+                                                                           },
+                                                                           ref
 ) => {
 
     const editor = useEditor({
         extensions: [...defaultExtensions, extensions],
         editorProps: {
             attributes: {
-                class: 'prose prose-stone dark:prose-invert prose-sm sm:prose-base lg:prose-lg m-5 focus:outline-none h-full w-full',
+                class: 'prose md:prose-lg lg:prose-xl prose-Stone dark:prose-invert prose-headings:font-title font-default focus:outline-none max-w-full',
             },
         },
         autofocus: 'end',
-        content: ``,
+        content: defaultContent,
     });
 
     useImperativeHandle(
