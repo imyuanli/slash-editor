@@ -14,8 +14,6 @@ export const defaultExtensions = [
         placeholder: `Press '/' to insert a command`,
     }),
     Underline,
-    Link.configure({
-        autolink: false,
-    }),
+    Link,
     Typography,
 ]

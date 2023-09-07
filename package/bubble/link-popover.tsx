@@ -33,6 +33,13 @@ const LinkPopover = ({editor}: any) => {
                     <h4 className="font-medium leading-none">Link</h4>
                     <div className="flex w-full justify-center items-center space-x-2">
                         <Input
+                            className={'w-full'}
+                            value={href}
+                            onChange={(e) => {
+                                setState({
+                                    href: e.target.value
+                                })
+                            }}
                             placeholder={'https://www.baidu.com'}
                         />
                         <div className={'flex space-x-2'}>
@@ -40,7 +47,7 @@ const LinkPopover = ({editor}: any) => {
                                 size={'icon'}
                                 variant="outline"
                                 onClick={() => {
-                                    editor?.chain().focus().extendMarkRange('link').setLink({href}).run()
+                                    editor.chain().focus().setLink({href: href,target: '_blank'}).run()
                                     handleChangeOpen()
                                 }}
                             >
