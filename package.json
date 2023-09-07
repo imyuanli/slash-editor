@@ -32,8 +32,10 @@
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-toggle": "^1.0.3",
     "@tailwindcss/typography": "^0.5.9",
+    "@tiptap/extension-color": "^2.1.8",
     "@tiptap/extension-link": "^2.1.8",
     "@tiptap/extension-placeholder": "^2.1.8",
+    "@tiptap/extension-text-style": "^2.1.8",
     "@tiptap/extension-typography": "^2.1.8",
     "@tiptap/extension-underline": "^2.1.8",
     "@tiptap/pm": "^2.1.7",
@@ -51,6 +53,7 @@
     "next": "13.4.19",
     "postcss": "8.4.29",
     "react": "18.2.0",
+    "react-color": "^2.19.3",
     "react-dom": "18.2.0",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "3.3.3",
@@ -58,5 +61,8 @@
     "tippy": "^0.0.0",
     "typescript": "5.2.2"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react-color": "^3.0.6"
+  }
 }
