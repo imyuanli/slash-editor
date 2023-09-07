@@ -9,8 +9,8 @@ import HeadlineSetting from "@/package/bubble/highlight-settig";
 const Bubble = ({editor}: any) => {
     return (
         <>
-            {editor && <BubbleMenu className={'max-w-xl'} editor={editor} tippyOptions={{duration: 100}}>
-              <div className={'flex items-center scale-75 p-1 bg-white border border-solid rounded-md'}>
+            {editor && <BubbleMenu editor={editor} tippyOptions={{duration: 100,maxWidth:600}}>
+              <div className={'flex items-center scale-75 md:scale-90 p-1 bg-white border border-solid rounded-md'}>
                   {markMenus.map((item, index) => {
                       return (
                           <Toggle
