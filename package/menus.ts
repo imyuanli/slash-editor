@@ -9,6 +9,8 @@ import {
     Pilcrow, Quote,
     Strikethrough, TerminalSquare,
     Underline,
+    Subscript,
+    Superscript
 } from "lucide-react";
 
 interface CommandProps {
@@ -107,12 +109,26 @@ export const markMenu = [
         isActive: (editor: any) => isActive(editor, "underline")
     },
     {
+        title: "Subscript",
+        description: "Make text subscript.",
+        icon: Subscript,
+        command: (props: CommandProps) => handleCommand(props).toggleSubscript().run(),
+        isActive: (editor: any) => isActive(editor, "subscript")
+    },
+    {
+        title: "Superscript",
+        description: "Make text superscript.",
+        icon: Superscript,
+        command: (props: CommandProps) => handleCommand(props).toggleSuperscript().run(),
+        isActive: (editor: any) => isActive(editor, "superscript")
+    },
+    {
         title: "Code",
         description: "Make text code.",
         icon: Code,
         command: (props: CommandProps) => handleCommand(props).toggleCode().run(),
         isActive: (editor: any) => isActive(editor, "code")
-    }
+    },
 ]
 
 //特殊的菜单

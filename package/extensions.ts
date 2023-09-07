@@ -8,6 +8,8 @@ import {Typography} from "@tiptap/extension-typography";
 import {Color} from "@tiptap/extension-color";
 import {TextStyle} from "@tiptap/extension-text-style";
 import {Highlight} from "@tiptap/extension-highlight";
+import {Superscript} from "@tiptap/extension-superscript";
+import {Subscript} from "@tiptap/extension-subscript";
 
 export const defaultExtensions = [
     SlashCommand,
@@ -24,4 +26,6 @@ export const defaultExtensions = [
     Highlight.configure({
         multicolor: true,
     }),
+    Subscript,
+    Superscript
 ]

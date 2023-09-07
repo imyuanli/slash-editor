@@ -36,6 +36,8 @@
     "@tiptap/extension-highlight": "^2.1.8",
     "@tiptap/extension-link": "^2.1.8",
     "@tiptap/extension-placeholder": "^2.1.8",
+    "@tiptap/extension-subscript": "^2.1.8",
+    "@tiptap/extension-superscript": "^2.1.8",
     "@tiptap/extension-text-style": "^2.1.8",
     "@tiptap/extension-typography": "^2.1.8",
     "@tiptap/extension-underline": "^2.1.8",
