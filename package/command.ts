@@ -1,7 +1,7 @@
 import {Extension} from "@tiptap/react";
 import renderItem from "@/package/render-item";
 import Suggestion from "@tiptap/suggestion";
-import {markMenu, specialMenu, textMenu} from "@/package/menus";
+import {markMenus, nodeMenus} from "@/package/menus";
 
 const SlashCommand: any = Extension
     .create({
@@ -29,9 +29,8 @@ const SlashCommand: any = Extension
     .configure({
         suggestion: {
             items: () => [
-                ...textMenu,
-                ...markMenu,
-                ...specialMenu
+                ...nodeMenus,
+                ...markMenus,
             ],
             render: renderItem,
         }

@@ -32,8 +32,8 @@ const isActive = (editor: any, type: string) => editor.isActive(type)
 
 const isHeadingActive = (editor: any, level: number) => editor.isActive("heading", {level})
 
-//文本相关的菜单
-export const textMenu = [
+//节点相关的菜单
+export const nodeMenus = [
     {
         title: "Paragraph",
         description: "Just start typing with plain text.",
@@ -75,11 +75,39 @@ export const textMenu = [
         icon: Heading5,
         command: (props: CommandProps) => handleHeadingCommand(props, 5),
         isActive: (editor: any) => isHeadingActive(editor, 5)
+    },
+    {
+        title: "Blockquote",
+        description: "Create a blockquote.",
+        icon: Quote,
+        command: (props: CommandProps) => handleCommand(props).toggleBlockquote().run(),
+        isActive: (editor: any) => isActive(editor, "blockquote")
+    },
+    {
+        title: "Bullet List",
+        description: "Create a bullet list.",
+        icon: List,
+        command: (props: CommandProps) => handleCommand(props).toggleBulletList().run(),
+        isActive: (editor: any) => isActive(editor, "bulletList")
+    },
+    {
+        title: "Ordered List",
+        description: "Create a ordered list.",
+        icon: List,
+        command: (props: CommandProps) => handleCommand(props).toggleOrderedList().run(),
+        isActive: (editor: any) => isActive(editor, "orderedList")
+    },
+    {
+        title: "CodeBlock",
+        description: "Create a code block.",
+        icon: TerminalSquare,
+        command: (props: CommandProps) => handleCommand(props).toggleCodeBlock().run(),
+        isActive: (editor: any) => isActive(editor, "codeBlock")
     }
 ]
 
 //标记相关的菜单
-export const markMenu = [
+export const markMenus = [
     {
         title: "Bold",
         description: "Make text bold.",
@@ -129,38 +157,6 @@ export const markMenu = [
         command: (props: CommandProps) => handleCommand(props).toggleCode().run(),
         isActive: (editor: any) => isActive(editor, "code")
     },
-]
-
-//特殊的菜单
-export const specialMenu = [
-    {
-        title: "Blockquote",
-        description: "Create a blockquote.",
-        icon: Quote,
-        command: (props: CommandProps) => handleCommand(props).toggleBlockquote().run(),
-        isActive: (editor: any) => isActive(editor, "blockquote")
-    },
-    {
-        title: "Bullet List",
-        description: "Create a bullet list.",
-        icon: List,
-        command: (props: CommandProps) => handleCommand(props).toggleBulletList().run(),
-        isActive: (editor: any) => isActive(editor, "bulletList")
-    },
-    {
-        title: "Ordered List",
-        description: "Create a ordered list.",
-        icon: List,
-        command: (props: CommandProps) => handleCommand(props).toggleOrderedList().run(),
-        isActive: (editor: any) => isActive(editor, "orderedList")
-    },
-    {
-        title: "CodeBlock",
-        description: "Create a code block.",
-        icon: TerminalSquare,
-        command: (props: CommandProps) => handleCommand(props).toggleCodeBlock().run(),
-        isActive: (editor: any) => isActive(editor, "codeBlock")
-    }
 ]
 
 
