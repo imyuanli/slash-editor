@@ -6,6 +6,8 @@ import {forwardRef, useImperativeHandle} from "react";
 import Bubble from "@/package/bubble";
 import defaultContent from "@/package/default-content";
 import TurndownService from 'turndown';
+import {Loader2} from "lucide-react";
+
 interface SlashEditorProps {
     className?: string;
     extensions?: [];
@@ -57,8 +59,18 @@ const SlashEditor: React.FunctionComponent<SlashEditorProps> = forwardRef(({
             onClick={getFocus}
             className={className}
         >
-            <Bubble editor={editor}/>
-            <EditorContent editor={editor}/>
+            {
+                editor?
+                    <>
+                        <Bubble editor={editor}/>
+                        <EditorContent editor={editor}/>
+                    </>
+                    :
+                    <div className={'flex justify-center items-center'}>
+                        <Loader2 size={'28'} className="animate-spin" />
+                    </div>
+            }
+
         </div>
     );
 })
