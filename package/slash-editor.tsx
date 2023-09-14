@@ -37,18 +37,14 @@ const SlashEditor: React.FunctionComponent<SlashEditorProps> = forwardRef(({
     });
 
     //返回markdown
-    const getMarkdown = () => {
-        const turndownService: any = new TurndownService();
-        return turndownService.turndown(editor?.getHTML())
-    }
-
     useImperativeHandle(
         ref,
         () => ({
-            editor: {
-                ...editor,
-                getMarkdown
-            },
+            editor,
+            getMarkdown: () => {
+                const turndownService: any = new TurndownService();
+                return turndownService.turndown(editor?.getHTML())
+            }
         })
     );
 
@@ -60,14 +56,14 @@ const SlashEditor: React.FunctionComponent<SlashEditorProps> = forwardRef(({
             className={className}
         >
             {
-                editor?
+                editor ?
                     <>
                         <Bubble editor={editor}/>
                         <EditorContent editor={editor}/>
                     </>
                     :
                     <div className={'flex justify-center items-center'}>
-                        <Loader2 size={'28'} className="animate-spin" />
+                        <Loader2 size={'28'} className="animate-spin"/>
                     </div>
             }
 
