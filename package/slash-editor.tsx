@@ -5,7 +5,7 @@ import {defaultExtensions} from "@/package/extensions";
 import {forwardRef, useImperativeHandle} from "react";
 import Bubble from "@/package/bubble";
 import defaultContent from "@/package/default-content";
-
+import TurndownService from 'turndown';
 interface SlashEditorProps {
     className?: string;
     extensions?: [];
@@ -34,10 +34,19 @@ const SlashEditor: React.FunctionComponent<SlashEditorProps> = forwardRef(({
         content: defaultContent,
     });
 
+    //返回markdown
+    const getMarkdown = () => {
+        const turndownService: any = new TurndownService();
+        return turndownService.turndown(editor?.getHTML())
+    }
+
     useImperativeHandle(
         ref,
         () => ({
-            editor,
+            editor: {
+                ...editor,
+                getMarkdown
+            },
         })
     );
 
