@@ -32,7 +32,7 @@ const SlashEditor: React.FunctionComponent<SlashEditorProps> = forwardRef(({
                 class: 'prose md:prose-lg lg:prose-xl prose-Stone dark:prose-invert prose-headings:font-title font-default focus:outline-none max-w-full',
             },
         },
-        autofocus: 'end',
+        autofocus: false,
         content: defaultContent,
     });
 
