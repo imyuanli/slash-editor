@@ -57,7 +57,10 @@ const Editor = () => {
 
     return (
         <>
-            <div className={'md:fixed absolute md:right-12 right-4 top-4 flex justify-center items-center space-x-4'}>
+            <div className={'w-full md:p-8 py-4 px-1 flex justify-between items-center'}>
+                <div className={'text-white font-bold text-xl md:text-2xl bg-black w-9 h-9 rounded-md flex justify-center items-center'}>
+                    /
+                </div>
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Button size={'icon'} variant="ghost">
@@ -75,7 +78,8 @@ const Editor = () => {
                                     <DropdownMenuItem onClick={() => downloadFile(editor.getJSON(), 'json')}>
                                         JSON
                                     </DropdownMenuItem>
-                                    <DropdownMenuItem onClick={() => downloadFile(editorRef.current.getMarkdown(), 'md')}>
+                                    <DropdownMenuItem
+                                        onClick={() => downloadFile(editorRef.current.getMarkdown(), 'md')}>
                                         Markdown
                                     </DropdownMenuItem>
                                 </DropdownMenuSubContent>
