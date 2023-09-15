@@ -100,11 +100,6 @@ const Editor = () => {
                                 GitHub
                             </DropdownMenuItem>
                         </Link>
-                        <DropdownMenuItem onClick={() => {
-                            console.log(getTitle())
-                        }}>
-                            目录
-                        </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
             </div>
